@@ -1,69 +1,55 @@
+/*https://brand.riotgames.com/en-us/league-of-legends/typography*/
+
+:root {
+    --blue-1: #CDFAFA;
+    --blue-2: #0AC8B9;
+    --blue-3: #0397AB;
+    --blue-4: #005A82;
+    --blue-5: #0A323C;
+    --blue-6: #091428;
+    --blue-7: #0A1428;
+
+    --gold-1: #F0E6D2;
+    --gold-2: #C8AA6E;
+    --gold-3: #C89B3C;
+    --gold-4: #785A28;
+    --gold-5: #463714;
+    --gold-6: #32281E;
+
+    --grey-1: #A09B8C;
+    --grey-1-5: #5B5A56;
+    --grey-2: #3C3C41;
+    --grey-3: #1E2328;
+    --grey-cool: #1E282D;
+    --hextech-black: #010A13;
+
+    /*For use in background applications only.*/
+    --dark-blue-gradient: linear-gradient(to bottom, #091428 0%, #0A1428 100%);
+    /*For use in Hextech metal only.*/
+    --gold-gradient: linear-gradient(180deg, #785A28 0%, #C89B3C 100%);
+    /*For use in design elements that contain magic.*/
+    --blue-gradient: linear-gradient(180deg, #005A82 0%, #0AC8B9 100%);
+    --blue-gradient-1: #005A82;
+    --blue-gradient-2: #0AC8B9;
+}
+
+/*
+Guiding principles
+Primary buttons and important gameplay UI elements are charged with Hextech magic – its function is to draw the
+player’s attention towards key interactions such as interactive buttons, timers, activity indicators, and progress bars.
+While this element shows up in many different ways, it always follows a few core tenants.
+*/
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-    --radius: 0.5rem;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-  }
+/* Example usage */
+body {
+    background: var(--dark-blue-gradient);
+    color: var(--blue-1);
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
+h1, h2, h3, h4, h5, h6 {
+    color: var(--gold-2);
 }
