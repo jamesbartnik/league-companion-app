@@ -1,6 +1,6 @@
 'use client';
 
-import { Dialog } from '@radix-ui/react-dialog';
+import { Dialog } from 'radix-ui';
 import { useState } from 'react';
 
 import { Champion, useChampions } from '../hooks/useChampions';
@@ -22,8 +22,6 @@ export default function Champions() {
 
       {loading ? (
         <p>Loading...</p>
-      ) : error ? (
-        <p>Error loading champions</p>
       ) : (
         <>
           {/* Display champions list */}
@@ -49,75 +47,80 @@ export default function Champions() {
           </section>
 
           {/* Display selected champion's details in a Modal */}
-          <Dialog
+          <Dialog.Root
             open={!!selectedChampion}
             onOpenChange={() => setSelectedChampion(null)}
           >
-            <Dialog.Overlay className='fixed inset-0 bg-black opacity-50' />
-            <Dialog.Content className='fixed inset-1/4 w-full max-w-2xl rounded-lg bg-white p-6 shadow-lg'>
-              <Dialog.Title className='text-3xl font-semibold'>
-                {selectedChampion?.name}
-              </Dialog.Title>
-              <p className='text-lg'>{selectedChampion?.title}</p>
-              <img
-                src={selectedChampion?.image}
-                alt={selectedChampion?.name}
-                className='mx-auto my-4 h-48 w-48 rounded-lg'
-              />
-              <Dialog.Description className='mt-4'>
-                <p>
-                  <strong>Blurb:</strong> {selectedChampion?.blurb}
-                </p>
-                <p>
-                  <strong>Attack:</strong> {selectedChampion?.info.attack}
-                </p>
-                <p>
-                  <strong>Defense:</strong> {selectedChampion?.info.defense}
-                </p>
-                <p>
-                  <strong>Magic:</strong> {selectedChampion?.info.magic}
-                </p>
-                <p>
-                  <strong>Difficulty:</strong>{' '}
-                  {selectedChampion?.info.difficulty}
-                </p>
-                <p>
-                  <strong>Tags:</strong> {selectedChampion?.tags.join(', ')}
-                </p>
-                <p>
-                  <strong>Partype:</strong> {selectedChampion?.partype}
-                </p>
-              </Dialog.Description>
+            <Dialog.Portal>
+              <Dialog.Overlay className='fixed inset-0 bg-black opacity-80' />
+              <Dialog.Content className='fixed bottom-0 left-0 right-0 top-0 m-auto h-fit w-full max-w-5xl rounded-lg bg-white p-6 shadow-lg'>
+                <div className='items-top flex w-full flex-row justify-between'>
+                  <Dialog.Title className='text-3xl font-semibold'>
+                    {selectedChampion?.name}
+                    <p className='text-lg'>{selectedChampion?.title}</p>
+                  </Dialog.Title>
 
-              {/* Champion Stats */}
-              <div className='mt-4'>
-                <h3 className='text-xl font-semibold'>Champion Stats</h3>
-                <ul className='list-disc pl-6'>
-                  <li>
-                    <strong>Health:</strong> {selectedChampion?.stats.hp}
-                  </li>
-                  <li>
-                    <strong>Mana:</strong> {selectedChampion?.stats.mp}
-                  </li>
-                  <li>
-                    <strong>Attack Damage:</strong>{' '}
-                    {selectedChampion?.stats.attackdamage}
-                  </li>
-                  <li>
-                    <strong>Armor:</strong> {selectedChampion?.stats.armor}
-                  </li>
-                  <li>
-                    <strong>Attack Speed:</strong>{' '}
-                    {selectedChampion?.stats.attackspeed}
-                  </li>
-                </ul>
-              </div>
+                  <Dialog.Close asChild>
+                    <button className='mt-4 rounded bg-blue-500 p-2 text-white'>
+                      Close
+                    </button>
+                  </Dialog.Close>
+                </div>
+                <img
+                  src={selectedChampion?.image}
+                  alt={selectedChampion?.name}
+                  className='mx-auto my-4 h-48 w-48 rounded-lg'
+                />
+                <Dialog.Description className='mt-4'>
+                  <p>
+                    <strong>Blurb:</strong> {selectedChampion?.blurb}
+                  </p>
+                  <p>
+                    <strong>Attack:</strong> {selectedChampion?.info.attack}
+                  </p>
+                  <p>
+                    <strong>Defense:</strong> {selectedChampion?.info.defense}
+                  </p>
+                  <p>
+                    <strong>Magic:</strong> {selectedChampion?.info.magic}
+                  </p>
+                  <p>
+                    <strong>Difficulty:</strong>{' '}
+                    {selectedChampion?.info.difficulty}
+                  </p>
+                  <p>
+                    <strong>Tags:</strong> {selectedChampion?.tags.join(', ')}
+                  </p>
+                  <p>
+                    <strong>Partype:</strong> {selectedChampion?.partype}
+                  </p>
+                </Dialog.Description>
 
-              <Dialog.Close className='mt-4 rounded bg-blue-500 p-2 text-white'>
-                Close
-              </Dialog.Close>
-            </Dialog.Content>
-          </Dialog>
+                <div className='mt-4'>
+                  <h3 className='text-xl font-semibold'>Champion Stats</h3>
+                  <ul className='list-disc pl-6'>
+                    <li>
+                      <strong>Health:</strong> {selectedChampion?.stats.hp}
+                    </li>
+                    <li>
+                      <strong>Mana:</strong> {selectedChampion?.stats.mp}
+                    </li>
+                    <li>
+                      <strong>Attack Damage:</strong>{' '}
+                      {selectedChampion?.stats.attackdamage}
+                    </li>
+                    <li>
+                      <strong>Armor:</strong> {selectedChampion?.stats.armor}
+                    </li>
+                    <li>
+                      <strong>Attack Speed:</strong>{' '}
+                      {selectedChampion?.stats.attackspeed}
+                    </li>
+                  </ul>
+                </div>
+              </Dialog.Content>
+            </Dialog.Portal>
+          </Dialog.Root>
         </>
       )}
     </main>
