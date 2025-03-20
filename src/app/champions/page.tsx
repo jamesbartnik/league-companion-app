@@ -11,23 +11,21 @@ export default function Champions() {
     null
   );
 
-  // Handle champion click
   const handleChampionClick = (champion: Champion) => {
     setSelectedChampion(champion);
   };
 
   return (
-    <main className='flex min-h-screen flex-col items-center p-24'>
+    <div className='relative flex min-h-screen w-full flex-col items-center justify-center p-4'>
       <h1 className='text-3xl font-bold'>All Champions</h1>
 
       {loading ? (
         <p>Loading...</p>
       ) : (
         <>
-          {/* Display champions list */}
           <section className='mb-12'>
             <h2 className='mb-4 text-2xl font-semibold'>All Champions</h2>
-            <div className='grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6'>
+            <div className='grid grid-cols-2 gap-y-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6'>
               {champions.map((champ) => (
                 <div
                   key={champ.id}
@@ -123,6 +121,6 @@ export default function Champions() {
           </Dialog.Root>
         </>
       )}
-    </main>
+    </div>
   );
 }

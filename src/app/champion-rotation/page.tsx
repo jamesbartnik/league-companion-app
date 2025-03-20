@@ -15,7 +15,7 @@ export default function ChampionRotation() {
     return (
       <section className='mb-12'>
         <h2 className='mb-4 text-2xl font-semibold'>{title}</h2>
-        <div className='grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6'>
+        <div className='grid grid-cols-2 gap-y-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6'>
           {champions.map((champ) => (
             <div key={champ.id} className='text-center'>
               <img
@@ -33,7 +33,7 @@ export default function ChampionRotation() {
   }
 
   return (
-    <div className='flex min-h-screen flex-col items-center p-24'>
+    <div className='relative flex min-h-screen w-full flex-col items-center justify-center p-4'>
       <h1 className='mb-4 text-3xl font-bold'>Champion Rotation</h1>
 
       {loading ? (

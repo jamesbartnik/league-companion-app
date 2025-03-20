@@ -1,30 +1,67 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# League Companion
 
-## Getting Started
+## Overview
+League Companion is a web application designed to help League of Legends players track their stats, champion mastery, and overall progress. By integrating with Riot’s API, it provides real-time insights and useful data to enhance gameplay. Whether you're trying to improve your champion mastery, monitor your in-game challenges, or simply explore detailed champion stats, League Companion makes it easy.
 
-First, run the development server:
+This project is both a passion project and a way to showcase my development skills—working with APIs, managing state, and building an interactive front-end using **Next.js, Jotai, and Radix UI**.
 
-```bash
-yarn dev
-```
+## Features
+- **Player Account Lookup** – Fetch player details using Riot ID.
+- **Champion Mastery Tracking** – View and analyze champion progression.
+- **Challenges Overview** – Track completed and in-progress challenges.
+- **Champion Stats & Data** – Retrieve champion details using the Data Dragon API.
+- **Modern UI/UX** – Built with Radix UI for a clean, accessible design.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technologies Used
+- **Next.js** – React framework for building a fast, scalable web app.
+- **Jotai** – State management for efficient data handling.
+- **Radix UI** – Accessible and customizable UI components.
+- **Riot Games API** – Fetches real-time player and champion data.
+- **TypeScript** – Ensures type safety and scalability.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## APIs Used
+- **Account API** – Fetches player data using Riot ID.
+- **Champion Mastery API** – Retrieves champion progression data.
+- **Challenges API** – Displays a player's in-game challenges.
+- **Data Dragon API** – Provides champion information and images.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Setup & Installation
+To run this project locally, follow these steps:
 
-## Learn More
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/jamesbartnik/league-companion-app.git
+   cd league-companion-app
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+2. Install dependencies:
+   ```sh
+   yarn install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. Create a `.env.local` file in the root directory and add your Riot API key:
+   ```sh
+   RIOT_API_KEY=your_api_key_here
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+4. Start the development server:
+   ```sh
+   yarn run dev
+   ```
 
-## Deploy on Vercel
+5. Open your browser and visit `http://localhost:3000`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Future Enhancements
+- **Personalized Player Insights** – Generate gameplay recommendations based on performance.
+- **Advanced Analytics** – Provide in-depth statistics and trends.
+- **Mobile-Friendly Design** – Optimize for mobile users.
+- **Expanded Data Integration** – Pull additional insights from Riot’s API.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## License
+This project is licensed under the MIT License.
+
+---
+
+### Contact
+For questions or feedback, feel free to reach out or open an issue on GitHub.
+

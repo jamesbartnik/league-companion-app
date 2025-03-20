@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 
+import { JotaiProvider } from '@/components/JotaiProvider';
 import NavBar from '@/components/NavBar';
 
 import './globals.css';
@@ -19,7 +20,9 @@ export default function RootLayout({
     <html lang='en'>
       <body className='bg-gray-100'>
         <NavBar />
-        <main className='mx-auto max-w-6xl p-4'>{children}</main>
+        <JotaiProvider>
+          <main className='mx-auto max-w-6xl p-4'>{children}</main>
+        </JotaiProvider>
       </body>
     </html>
   );

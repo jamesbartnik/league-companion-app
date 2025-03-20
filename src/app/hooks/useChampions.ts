@@ -66,7 +66,6 @@ const fetchChampionData = async (): Promise<Champion[]> => {
       image: `${IMAGE_BASE_URL}${champ.image.full}`,
     }));
 
-    // Sort champions alphabetically by name
     return allChampions.sort((a, b) => a.name.localeCompare(b.name));
   } catch (error) {
     console.error('Error fetching champion data', error);

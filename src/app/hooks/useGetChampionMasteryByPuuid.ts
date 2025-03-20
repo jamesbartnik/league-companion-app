@@ -10,12 +10,12 @@ export interface ChampionMasteryResponse {
   championPointsUntilNextLevel: number;
 }
 
-export function useGetChampionMasteryByPuuid() {
+export function useGetChampionMasteryByPuuid(puuid: string | null) {
   const [data, setData] = useState<ChampionMasteryResponse[] | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const fetchData = async (puuid: string) => {
+  const fetchData = async () => {
     if (!puuid) {
       setError('Please enter a valid PUUID.');
       return;
@@ -45,5 +45,10 @@ export function useGetChampionMasteryByPuuid() {
     }
   };
 
-  return { data, loading, error, fetchData };
+  // Fetch data when puuid changes
+  if (puuid) {
+    fetchData();
+  }
+
+  return { data, loading, error };
 }

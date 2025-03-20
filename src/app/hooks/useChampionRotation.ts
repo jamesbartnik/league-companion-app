@@ -1,4 +1,3 @@
-// /hooks/useChampionRotation.ts
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
@@ -14,7 +13,7 @@ const CHAMPION_DATA_URL =
 const IMAGE_BASE_URL =
   'https://ddragon.leagueoflegends.com/cdn/13.1.1/img/champion/';
 
-const mapChampions = (
+export const mapChampions = (
   championData: Record<string, any>,
   ids: string[]
 ): Champion[] =>
